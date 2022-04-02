@@ -1,4 +1,4 @@
-const Product = require("../models/product");
+const Product = require("../models/item");
 const formidable = require("formidable");
 const _ = require("lodash");
 const fs = require("fs");
@@ -28,9 +28,9 @@ exports.createProduct = (req, res) => {
       });
     }
     //destructure the fields
-    const { name, description, price, category, stock } = fields;
+    const { name, description, price, stock } = fields;
 
-    if (!name || !description || !price || !category || !stock) {
+    if (!name || !description || !price || !stock) {
       return res.status(400).json({
         error: "Please include all fields"
       });

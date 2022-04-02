@@ -10,7 +10,7 @@ const {
   deleteProduct,
   getAllProducts,
   getAllUniqueCategories
-} = require("../controllers/product");
+} = require("../controllers/item");
 const { isSignedIn, isAuthenticated, isAdmin } = require("../controllers/auth");
 const { getUserById } = require("../controllers/user");
 

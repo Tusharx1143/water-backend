@@ -10,8 +10,8 @@ const path = require('path')
 //My routes
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/user");
-const categoryRoutes = require("./routes/category");
-const productRoutes = require("./routes/product");
+
+const productRoutes = require("./routes/item");
 const orderRoutes = require("./routes/order");
 const razorpayRoutes = require("./routes/razorpay");
 
@@ -34,7 +34,6 @@ app.use(cors());
 //My Routes
 app.use("/api", authRoutes);
 app.use("/api", userRoutes);
-app.use("/api", categoryRoutes);
 app.use("/api", productRoutes);
 app.use("/api", orderRoutes);
 app.use("/api",razorpayRoutes)
@@ -43,7 +42,7 @@ const port = process.env.PORT || 8000;
 
 
 app.get('/api/logo', (req, res) => {
-	res.sendFile(path.join(__dirname, 'apple-touch-icon.png'))
+	res.sendFile(path.join(__dirname, 'logo'))
 })
 
 //Starting a server
